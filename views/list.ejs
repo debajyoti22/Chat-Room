@@ -1,0 +1,27 @@
+<%- include("header") -%>
+    <div class="box" id="heading">
+        <% if(kindofday == "Saturday"|| kindofday == "Sunday"){ %>
+            <h2 style="color: rgb(184, 62, 6);"><%= kindofday %>'s List</h2>
+            
+            <%}else{%>
+                <h2 style="color: rgb(0, 0, 0);"><%= kindofday %>'s List</h2>
+            <%}%>
+
+    </div>
+    
+    <div class="box">
+             
+            <% for(var i=0;i<additem.length; i++){ %>
+                <div class="item">
+                    <input type="checkbox">
+                    <p> <%= additem[i] %></p>
+                </div>                
+            <% } %>  
+            
+            <form class="item" action="/" method="post">
+                <input type="text" name="newitem" placeholder="Enter New Item" >
+                <button type="submit" name="button">+</button>
+            </form>
+    </div>      
+
+<%- include('footer'); -%>
